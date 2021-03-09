@@ -8,7 +8,8 @@ export interface Customer{
     email: string,
     role: string,
     status: string,
-    password: string
+    password: string,
+    account: string,
 }
 
 export interface Agent{
@@ -31,15 +32,12 @@ export interface Administrator{
     password: string
 }
 
-export interface Currency {
-        "success" : true,
-        "terms" : "https:\/\/currencylayer.com\/terms",
-        "privacy" : "https:\/\/currencylayer.com\/privacy",
-        "timestamp" : number,
-        "source" : "USD",
-        "quotes": {}
-}
 
-export interface Quotes{
-    "quotes" : {KeyValue}
+export interface User{
+    name: string,
+    firstname: string,
+    tel: string,
+    email: string,
+    role: string,
+    password: string
 }

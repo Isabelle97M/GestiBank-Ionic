@@ -22,8 +22,8 @@
       <ion-col>
         <ion-card>
           <ion-item>
-          <ion-label>Votre E-mail</ion-label>
-          <ion-input></ion-input>
+          <ion-label><ion-icon name="mail-outline"></ion-icon>  E-mail</ion-label>
+          <ion-input [(ngModel)]="email" ></ion-input>
           <br/><br/>
         </ion-item>
       </ion-card>
@@ -34,8 +34,8 @@
       <ion-col>
         <ion-card>
         <ion-item>
-          <ion-label>Votre mot de passe</ion-label>
-          <ion-input></ion-input>
+          <ion-label><ion-icon name="key-outline"></ion-icon>  Mot de passe</ion-label>
+          <ion-input [(ngModel)]="password" type="password"></ion-input>
           <br/><br/>
         </ion-item>
       </ion-card>
@@ -46,7 +46,7 @@
       <ion-col class="text-align:left"></ion-col>
       <ion-col>
         <br/><br/>
-        <ion-button > SE CONNECTER </ion-button>
+        <ion-button (click)="connect()"> SE CONNECTER </ion-button>
       </ion-col>
       <ion-col class="text-align:right"></ion-col>
     </ion-row>

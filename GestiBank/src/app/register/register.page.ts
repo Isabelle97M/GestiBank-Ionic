@@ -16,6 +16,7 @@ nom: string;
 prenom : string;
 phone : string;
 mail : string;
+compte: string;
 
   constructor(
     private service : CustomerServiceService, 
@@ -24,7 +25,7 @@ mail : string;
   ngOnInit() {
   }
 
-  CustomerCreation(newCustomer){
+  CustomerCreation(){
       this.customer = {
       name: this.nom,
       firstname: this.prenom,
@@ -32,16 +33,21 @@ mail : string;
       email: this.mail,
       role: "CUSTOMER",
       status: "WAITING",
+      account: this.compteSelected(),
       password: " ",
     }
 
     this.service.postCustomer(this.customer).subscribe(
       response => {
-        console.log(this.customer)
+        console.log(response)
         this.router.navigate(["home"])
       }
     )
 
+  }
+
+  compteSelected(){
+    return this.compte;
   }
 
 }

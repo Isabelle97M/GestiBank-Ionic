@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Currency } from '../models';
 import { ConverterService } from '../services/converter.service';
 
 @Component({

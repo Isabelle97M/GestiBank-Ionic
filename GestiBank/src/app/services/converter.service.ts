@@ -1,7 +1,5 @@
-import { getCurrencySymbol, KeyValue, KeyValuePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Currency, Quotes } from '../models';
 
 @Injectable({
   providedIn: 'root'
