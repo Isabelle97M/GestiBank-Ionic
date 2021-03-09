@@ -1,0 +1,78 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home">RETOUR</ion-back-button>
+    </ion-buttons>
+    <ion-title>Créer un compte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h3 align="center">Ouverture de compte</h3>
+        <br/><br/>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+        <ion-item>
+          <ion-label>Nom : </ion-label>
+          <ion-input [(ngModel)]="nom"></ion-input>
+          <br/><br/>
+        </ion-item>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+        <ion-item>
+          <ion-label>Prénom : </ion-label>
+          <ion-input [(ngModel)]="prenom"></ion-input>
+          <br/><br/>
+        </ion-item>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+        <ion-item>
+          <ion-label>E-mail : </ion-label>
+          <ion-input [(ngModel)]="mail"></ion-input>
+          <br/><br/>
+        </ion-item>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+        <ion-item>
+          <ion-label>Tel : </ion-label>
+          <ion-input [(ngModel)]="phone" ></ion-input>
+          <br/><br/>
+        </ion-item>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+      
+    <ion-row>
+      <ion-col class="text-align:left"></ion-col>
+      <ion-col>
+        <br/><br/>
+        <ion-button (click)="CustomerCreation(newCustomer)"> S'INSCRIRE </ion-button>
+      </ion-col>
+      <ion-col class="text-align:right"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

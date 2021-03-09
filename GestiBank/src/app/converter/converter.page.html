@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home">RETOUR</ion-back-button>
+    </ion-buttons>
+    <ion-title>Convertisseur de devises</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <img src = "assets/devise.jpg"/>
+    <ion-card-header>
+      <ion-card-subtitle>Accéder à une variété de cours monétaires</ion-card-subtitle>
+    </ion-card-header>
+  
+
+
+
+    <ion-card-content>
+      <ion-grid >
+
+        <ion-row>
+          <ion-col>
+              <ion-list>
+                <ion-list-header>
+                  <ion-label>
+                    Convertir un montant
+                  </ion-label>
+                </ion-list-header>
+                <ion-item>
+                  <ion-label>Devise</ion-label>
+                  <ion-select [(ngModel)]="devise" (ionChange)="codeSelected()" placeholder="Sélectionner">
+                    <ion-select-option value="EUR">EURO</ion-select-option>
+                    <ion-select-option value="TND">DINARD</ion-select-option>
+                    <ion-select-option value="GBP">LIVRE</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-card>
+            <ion-item>
+              <ion-label>Montant</ion-label>
+              <ion-input [(ngModel)]="montant"></ion-input>
+              <br/><br/>
+            </ion-item>
+          </ion-card>
+          </ion-col>
+        </ion-row>
+          
+        <ion-row>
+          <ion-col>
+            <ion-card>
+            <ion-item>
+              <ion-label>Résultat</ion-label>
+              <ion-input [(ngModel)]="resultat"></ion-input>
+              <br/><br/>
+            </ion-item>
+          </ion-card>
+          </ion-col>
+        </ion-row>
+          
+        <ion-row>
+          <ion-col class="text-align:left"></ion-col>
+          <ion-col>
+            <ion-button (click)="convert()"> CONVERTIR </ion-button>
+          </ion-col>
+          <ion-col class="text-align:right"></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  
+
+</ion-content>

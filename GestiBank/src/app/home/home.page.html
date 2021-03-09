@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ACCUEIL</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>Bienvenue chez</ion-card-subtitle>
+      <ion-card-title align="center"> <img width="70px" src = "assets/logo-gestibank.png"/> GestiBank</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Notre banque vous accueille en ligne et en agence. Contactez-nous.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src = "assets/banque-accueil.jpg"/>
+    <ion-card-header>
+      <ion-card-title>Nouveau client ?</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Pas encore de compte chez nous ? Rejoignez-nous vite, pour se faire, inscrivez-vous en cliquant ici 
+      <br /> <br /> 
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-align:left"></ion-col>
+          <ion-col>
+            <ion-button color="danger" [routerLink]="['/register']"> S'INSCRIRE </ion-button>
+          </ion-col>
+          <ion-col class="text-align:right"></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Connexion</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Vous avez déjà un compte chez nous ? Connectez-vous en cliquant ici 
+      <br /> <br /> 
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-align:left"></ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['/connexion']">SE CONNECTER</ion-button>
+          </ion-col>
+          <ion-col class="text-align:right"></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Nos services</ion-card-title>
+      <ion-card-subtitle>Service : Conversion de devises</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Vous avez déjà un compte chez nous ? Connectez-vous en cliquant ici 
+      <br /> <br /> 
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-align:left"></ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['/converter']">CONVERTISSEUR</ion-button>
+          </ion-col>
+          <ion-col class="text-align:right"></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
