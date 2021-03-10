@@ -10,6 +10,7 @@ export interface Customer{
     status: string,
     password: string,
     account: string,
+    agent: string
 }
 
 export interface Agent{

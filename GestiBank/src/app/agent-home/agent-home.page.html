@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Espace Agent : {{name}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor = "let customer of customers">
+
+    <ion-card-header>
+      <ion-card-title> {{customer.firstname}} {{customer.name}}</ion-card-title>
+      <ion-card-subtitle> STATUT : {{customer.status}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button *ngIf="customer.status=='WAITING'" (click)="customerValidation(customer)">VALIDER</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+  
+</ion-content>

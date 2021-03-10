@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="administrator-home">RETOUR</ion-back-button>
+    </ion-buttons>
+    <ion-title>Liste des Administrateurs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor = "let admin of admins">
+
+    <ion-card-header>
+      <ion-card-title> {{admin.firstname}} {{admin.name}}</ion-card-title>
+      <ion-card-subtitle> {{admin.matricule}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <br/><br/>
+      <ion-fab horizontal="start" vertical="center" slot="fixed">
+        <ion-fab-button color="primary" (click)="details(admin)">
+          <ion-icon name="information-circle"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>  
+
+      <ion-fab horizontal="center" vertical="center" slot="fixed">
+        <ion-fab-button color="warning" (click)="update(admin)">
+          <ion-icon name="pencil"></ion-icon>
+        </ion-fab-button>
+      </ion-fab> 
+      
+      <ion-fab horizontal="end" vertical="center" slot="fixed">
+        <ion-fab-button color="danger" (click)="delete(admin)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-fab-button>
+      </ion-fab> 
+      <br/><br/>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

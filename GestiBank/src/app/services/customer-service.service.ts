@@ -19,11 +19,11 @@ export class CustomerServiceService {
   }
 
   getValidatedCustomers(){
-    return this.httpClient.get(this.dataBase + 'waiting/list');
+    return this.httpClient.get(this.dataBase + 'validated/list');
   }
 
   getWaitingCustomers(){
-    return this.httpClient.get(this.dataBase + 'validated/list');
+    return this.httpClient.get(this.dataBase + 'waiting/list');
   }
 
   postCustomer(customer: Customer){
@@ -31,11 +31,15 @@ export class CustomerServiceService {
   }
 
   putCustomer(customer){
-    return this.httpClient.post(this.dataBase + 'update/' + ['email'], customer);
+    return this.httpClient.put(this.dataBase + 'update/' + customer.email, customer);
+  }
+
+  customerValidation(customer){
+    return this.httpClient.put(this.dataBase + 'validationByAgent/' + customer.email + '/' + customer.agent, customer);
   }
 
   deleteCustomer(email: String){
-    return this.httpClient.post(this.dataBase + 'update/' + ['email'], email);
+    return this.httpClient.delete(this.dataBase + 'delete/' + email);
   }
 
 }

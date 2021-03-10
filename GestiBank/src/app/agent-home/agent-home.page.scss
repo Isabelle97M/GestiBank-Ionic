@@ -1,0 +1,63 @@
+ion-card{
+    background-color:lightblue;
+    color: black;
+}
+
+ion-card-subtitle{
+    color: midnightblue;
+}
+
+ion-card-title{
+    color: navy;
+}
+
+ion-button{
+    --background:navy;
+}
+
+ion-toolbar{
+    --background:white;
+    color: darkblue;
+}
+
+ion-content{
+    --background:white;
+}
+
+ion-item{
+    --background:white;
+    color: navy;
+}
+
+ion-icon{
+    color: navy;
+}
+
+h4{
+    margin-top: 50px;
+    color: dodgerblue;
+}
+
+
+ion-list-header{
+    --background:white;
+    --border-color:white;
+    color:darkblue;
+    font-size: larger;
+    font-family:sans-serif;
+    font-weight:bolder;
+}
+
+ion-item-group{
+    --background:white;
+    --border-color:white;
+    color:darkblue;
+    font-size: larger;
+    font-family:sans-serif;
+    font-weight:bolder;
+}
+
+ion-item-divider{
+    --background:navy;
+    color:aliceblue;
+}

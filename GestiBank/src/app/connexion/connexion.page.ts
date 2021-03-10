@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { User } from '../models';
 import { UserService } from '../services/user.service';
 import { ToastController } from '@ionic/angular';
@@ -20,7 +20,8 @@ export class ConnexionPage implements OnInit {
   constructor(
   private service : UserService,
   public router: Router,
-  public toastController: ToastController
+  public toastController: ToastController,
+  private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -30,11 +31,31 @@ export class ConnexionPage implements OnInit {
     if(this.email!=null && this.password!=null){
       this.service.userConnexion(this.email).subscribe(data =>{
         this.userInfos = <User>data;
-        if(this.password == this.userInfos.password){
+        if(this.userInfos != null && this.password == this.userInfos.password){
           //console.log("Auth Réussie");
-          this.router.navigate(["tabs"]);
+          let role = this.userInfos.role;
+          let navigationExtras: NavigationExtras = {
+            state: {
+              name: this.userInfos.firstname + " " + this.userInfos.name
+            }
+          };
+          switch(role){
+            case role = "CUSTOMER":
+              this.router.navigate(['tabs'], navigationExtras);
+              break;
+            case role = "AGENT":
+              this.router.navigate(['agent-home'], navigationExtras);
+              break;
+            case role = "ADMINISTRATOR":
+              this.router.navigate(['administrator-home'], navigationExtras);
+              break;
+            default:
+              this.activatedRoute;
+              break;
+          }
+          
         } else {
-          this.messageToasted("Votre mot de passe est incorrect");
+          this.messageToasted("Vos identifiants sont incorrects.");
           //console.log("Mot de passe incorrect !");
         }
         //console.log(this.userInfos);

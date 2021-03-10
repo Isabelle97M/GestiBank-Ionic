@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Espace Admin : {{name}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+      <ion-list-header>Gérer les clients</ion-list-header>
+      <ion-item button (click)="customersList()">Tous les comptes</ion-item>
+      <ion-item button (click)="customersWaitingList()">Les comptes en attente</ion-item>
+
+      <ion-list-header>Gérer le personnel</ion-list-header>
+      <ion-item button (click)="agentsList()">Liste des agents</ion-item>
+      <ion-item button (click)="adminsList()">Liste des admins</ion-item>
+      <ion-item button (click)="addAgent()">Ajout d'un agent</ion-item>
+      <ion-item button (click)="addAdmin()">Ajout d'un administrateur</ion-item>
+    </ion-list>
+  
+</ion-content>
