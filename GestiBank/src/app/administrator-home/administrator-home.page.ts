@@ -76,5 +76,9 @@ export class AdministratorHomePage implements OnInit {
     this.router.navigate(['add-staff'], navigationExtras);
   }
 
-  
+  logout(){
+    this.router.navigate(['connexion']);
+  }
+
+
 }

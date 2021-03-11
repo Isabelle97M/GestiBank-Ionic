@@ -22,6 +22,7 @@ export class CustomerUpdatePage implements OnInit {
 
   customer: Customer;
   public agents;
+  public customerAgent;
 
   public kind;
 
@@ -54,7 +55,7 @@ export class CustomerUpdatePage implements OnInit {
    
     this.agentService.getAllAgents().subscribe( data =>{
       this.agents = (<Agent[]>data);
-      console.log(this.agents);
+      //console.log(this.agents);
     })
       
 
@@ -93,7 +94,8 @@ export class CustomerUpdatePage implements OnInit {
   }
 
   agentSelected(){
-    return this.agent;
+    console.log(this.customerAgent);
+    return this.customerAgent;
   }
 
 }

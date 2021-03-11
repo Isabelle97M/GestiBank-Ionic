@@ -26,6 +26,10 @@ export class CustomerServiceService {
     return this.httpClient.get(this.dataBase + 'waiting/list');
   }
 
+  getCustomersListByAgent(agentName){
+    return this.httpClient.get(this.dataBase + 'list/' + agentName);
+  }
+
   postCustomer(customer: Customer){
     return this.httpClient.post(this.dataBase + "add", customer);
   }
@@ -35,7 +39,7 @@ export class CustomerServiceService {
   }
 
   customerValidation(customer){
-    return this.httpClient.put(this.dataBase + 'validationByAgent/' + customer.email + '/' + customer.agent, customer);
+    return this.httpClient.put(this.dataBase + 'validationByAgent/' + customer.email, customer);
   }
 
   deleteCustomer(email: String){

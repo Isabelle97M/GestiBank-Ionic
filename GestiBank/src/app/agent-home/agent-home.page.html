@@ -1,6 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> Espace Agent : {{name}} </ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="changeText" (click)="logout()">
+        <ion-icon slot="start" size="large" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> Agent : {{agentName}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,13 +13,38 @@
 
   <ion-card *ngFor = "let customer of customers">
 
-    <ion-card-header>
-      <ion-card-title> {{customer.firstname}} {{customer.name}}</ion-card-title>
-      <ion-card-subtitle> STATUT : {{customer.status}}</ion-card-subtitle>
-    </ion-card-header>
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col>
+            <ion-card-header>
+              <ion-card-title> {{customer.firstname}} {{customer.name}}</ion-card-title>
+            </ion-card-header>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
     <ion-card-content>
-      <ion-button *ngIf="customer.status=='WAITING'" (click)="customerValidation(customer)">VALIDER</ion-button>
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col>
+            <ion-card-subtitle> STATUT : {{customer.status}}</ion-card-subtitle>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <ion-button *ngIf="customer.status=='WAITING'" (click)="customerValidation(customer)" color="success">VALIDER</ion-button>
+          </ion-col>
+        </ion-row>
+        <br/><br/>
+        <ion-row>
+          <ion-col>
+            Demandes de chéquiers :
+          </ion-col>
+
+          <ion-col class="ion-text-center">
+            <ion-button (click)="customerValidation(customer)">ACCEPTER</ion-button>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
 
   </ion-card>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,22 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  name: string;
+  
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+
+    this.activatedRoute.queryParams.subscribe(
+      params => {
+        if(this.router.getCurrentNavigation().extras.state) {
+          this.name = this.router.getCurrentNavigation().extras.state.name;
+        }
+      });
+
+  }
 
 }

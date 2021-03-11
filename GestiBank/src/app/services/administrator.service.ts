@@ -18,5 +18,13 @@ export class AdministratorService {
     return this.httpClient.post(this.dataBase + 'add', admin);
   }
 
+  updateAdmin(admin){
+    return this.httpClient.put(this.dataBase + 'update/' + admin.email, admin);
+  }
+
+  deleteAdmin(admin){
+    return this.httpClient.delete(this.dataBase + 'delete/' + admin.email);
+  }
+
 
 }

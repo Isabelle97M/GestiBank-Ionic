@@ -1,6 +1,11 @@
+
 ion-card{
-    background-color:lightblue;
-    color: black;
+    background-color:rgb(180, 215, 216);
+    color: navy;
+}
+ion-card-content{
+    background-color: white;
+    color: navy;
 }
 
 ion-card-subtitle{
@@ -24,40 +29,11 @@ ion-content{
     --background:white;
 }
 
-ion-item{
-    --background:white;
-    color: navy;
+ion-list{
+    background-color: white;
 }
 
-ion-icon{
-    color: navy;
-}
 
 h4{
-    margin-top: 50px;
-    color: dodgerblue;
-}
-
-
-ion-list-header{
-    --background:white;
-    --border-color:white;
-    color:darkblue;
-    font-size: larger;
-    font-family:sans-serif;
-    font-weight:bolder;
-}
-
-ion-item-group{
-    --background:white;
-    --border-color:white;
-    color:darkblue;
-    font-size: larger;
-    font-family:sans-serif;
-    font-weight:bolder;
-}
-
-ion-item-divider{
-    --background:navy;
-    color:aliceblue;
+    color: navy;
 }

@@ -1,16 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> Espace Admin : {{name}} </ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="changeText" (click)="logout()">
+        <ion-icon slot="start" size="large" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> Admin : {{name}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<h5 align="center">MES ACTIONS</h5>
     <ion-list>
-      <ion-list-header>Gérer les clients</ion-list-header>
+      <ion-list-header> Gérer les clients</ion-list-header>
       <ion-item button (click)="customersList()">Tous les comptes</ion-item>
       <ion-item button (click)="customersWaitingList()">Les comptes en attente</ion-item>
-
+<br/><br/>
       <ion-list-header>Gérer le personnel</ion-list-header>
       <ion-item button (click)="agentsList()">Liste des agents</ion-item>
       <ion-item button (click)="adminsList()">Liste des admins</ion-item>

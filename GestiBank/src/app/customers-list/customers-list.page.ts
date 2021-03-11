@@ -40,12 +40,17 @@ export class CustomersListPage implements OnInit {
   }
 
   public details(customer){
-    let detailsCustomer = "Nom : " + customer.name + "\r"
-    + "Prénom : " + customer.firstname + "\n"
-    + "E-mail : " + customer.email + "\n"
-    + "Téléphone : " + customer.tel + "\n"
-    + "Statut : " + customer.status + "\n"
-    + "Agent : " + customer.agent + "\n";
+
+    let detailsCustomer =`
+    <ul>
+        <li> Nom : ` + customer.name + `</li>
+        <li> Prénom : `+ customer.firstname +`</li>
+        <li> E-mail : ` + customer.email + `</li>
+        <li> Téléphone : ` + customer.tel + `</li>
+        <li> Statut : `+ customer.status + `</li>
+        <li> Agent : `+ customer.agent + `</li>
+    </ul> 
+    `
     this.infosAlert(detailsCustomer);
   }
 
@@ -78,7 +83,7 @@ export class CustomersListPage implements OnInit {
   async deleteAlert(customer: Customer) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Détails Client',
+      header: 'Suppressions Client',
       message: 'Êtes-vous sûr de vouloir supprimer le client suivant : ' + customer.name + " " + customer.firstname,
       buttons: [{
         text: 'ANNULER',

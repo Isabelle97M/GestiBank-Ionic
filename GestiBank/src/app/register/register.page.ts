@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { Customer } from '../models';
 import { CustomerServiceService } from '../services/customer-service.service';
 
@@ -22,7 +22,8 @@ compte: string;
   constructor(
     private service : CustomerServiceService, 
     private router : Router,
-    private alertController: AlertController
+    private alertController: AlertController,
+    public toastController: ToastController
     ) { }
 
   ngOnInit() {
@@ -41,13 +42,18 @@ compte: string;
       agent: " "
     }
 
-    this.service.postCustomer(this.customer).subscribe(
-      response => {
-        //console.log(response)
-        this.creationAlert();
-        this.router.navigate(["home"]);
-      }
-    )
+    if(this.nom != null && this.prenom != null && this.phone != null && this.mail != null && this.compteSelected() != null){
+      this.service.postCustomer(this.customer).subscribe(
+        response => {
+          //console.log(response)
+          this.creationAlert();
+          this.router.navigate(["home"]);
+        }
+      )
+    } else {
+      this.messageToasted();
+    }
+    
 
   }
 
@@ -59,14 +65,23 @@ compte: string;
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Bienvenue chez GestiBank',
-      message: 'Votre compte a été créé avec succès !' 
-      + '\n' 
-      + 'Vous pouvez déjà vous connecter sur votre espace client.'
-      + '\n'
-      + 'Connectez-vous sur votre adresse mail afin de récupérer vos identifiants.',
+      message: `
+      <ul>
+        <li> Votre compte a été créé avec succès !</li>
+        <li> Dès validation de votre compte, vous recevrez vos identifiants à l'adresse mail indiquée.</li>
+      </ul> 
+      `,
       buttons: ['OK']
     });
     await alert.present();
+  }
+
+  async messageToasted() {
+    const toast = await this.toastController.create({
+      message: "Merci de compléter tous les champs!",
+      duration: 2000
+    });
+    toast.present();
   }
 
 }

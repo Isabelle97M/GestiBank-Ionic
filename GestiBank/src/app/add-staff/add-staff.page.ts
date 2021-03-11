@@ -55,6 +55,7 @@ export class AddStaffPage implements OnInit {
         }
         this.agentService.addAgent(this.agent).subscribe(response => {
           console.log("Nouvel agent : " + this.agent);
+          this.router.navigate(['agents-list'])
         });
         break;
 
@@ -70,6 +71,8 @@ export class AddStaffPage implements OnInit {
         }
         this.adminService.addAdmin(this.admin).subscribe(response => {
           console.log("Nouvel Admin : " + staff);
+          this.router.navigate(['admins-list'])
+
         });
         break;
       

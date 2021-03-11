@@ -36,7 +36,7 @@ export class ConnexionPage implements OnInit {
           let role = this.userInfos.role;
           let navigationExtras: NavigationExtras = {
             state: {
-              name: this.userInfos.firstname + " " + this.userInfos.name
+              name: this.userInfos.name + " " + this.userInfos.firstname
             }
           };
           switch(role){
@@ -54,6 +54,10 @@ export class ConnexionPage implements OnInit {
               break;
           }
           
+          // vider les champs de connexion 
+          this.email="";
+          this.password="";
+
         } else {
           this.messageToasted("Vos identifiants sont incorrects.");
           //console.log("Mot de passe incorrect !");

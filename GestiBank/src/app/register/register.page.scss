@@ -33,3 +33,21 @@ h3{
     margin-top: 20px;
     color: dodgerblue;
 }
+
+body{
+    background-color: white;
+}
+
+.md body {
+    --ion-background-color: white;
+}
+
+div.alert-radio-label.sc-ion-alert-md{
+    color: navy;
+}
+
+ul{
+    list-style:none;
+    margin-left:0;
+    padding-left:0;
+    }

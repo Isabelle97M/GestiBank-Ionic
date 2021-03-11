@@ -88,8 +88,8 @@
     <ion-row>
       <ion-col>
         <ion-card>
-          <ion-select [(ngModel)]="agent" (ionChange)="agentSelected()">
-            <ion-select-option *ngFor = "let agent of agents" >{{agent.name}}</ion-select-option>
+          <ion-select [(ngModel)]="customerAgent" (ionChange)="agentSelected()">
+            <ion-select-option  *ngFor = "let customerAgent of agents" >{{customerAgent.name}} {{customerAgent.firstname}}</ion-select-option>
         </ion-select>
       </ion-card>
       </ion-col>
